@@ -4,7 +4,6 @@ eMolFrag is a molecular fragmentation tool based on BRICS algorithm written in P
 This README file is written by Tairan Liu. 
 Last Update: 09/13/2016
 
-========================
 
 # Prerequisites:
 1. Python 2.7.11 or Python 3.5.2
@@ -13,7 +12,6 @@ Last Update: 09/13/2016
 4. eMolFrag Scripts 2016_09_09_01
 5. (Optional) Openbabel 2.3.1
 
-========================
 
 # Usage:
 1. Use ConfigurePath.py to configure paths. Paths only need to be set before the first run if no changes to the paths. After script starts, instructions will be given for setting paths.
@@ -26,6 +24,7 @@ Last Update: 09/13/2016
     - /Path_to_output_directory/     | Path of the directory for output, relative path is also OK.
     - Number-Of-Cores                | Number of processes created in parallel step. It is better to set this parameter no larger than the number of cores of the system/node/cluster.
 
+
 # Example:
 1. mkdir TestEMolFrag/   # Any folder name you want
 2. cp /.../test-set100.tar.gz /.../TestEMolFrag/
@@ -37,7 +36,6 @@ Last Update: 09/13/2016
 6. python /.../eMolFrag_2016_09_09_01/eMolFrag.py /.../TestEMolFrag/test-set100/ /.../TestEMolFrag/outputp-testset100-1/ 16    # Directory name can be changed to whatever you want. 
 7. # Check output.
 
-========================
 
 # Output:
 1. Find correct output folder, assume /.../Output-xxxx/
@@ -75,8 +73,7 @@ Last Update: 09/13/2016
    - output-rigid/      | Rigid fragments after remove redundancy, with similar fragments in the end of each file.
    
    - output-linker/     | Linker fragments after remove redundancy.
-
-======================== 
+ 
 
 # Update Log:
 This script is written by Tairan Liu.
