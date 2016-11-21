@@ -17,12 +17,12 @@ Last Update: 09/13/2016
 1. Use ConfigurePath.py to configure paths. Paths only need to be set before the first run if no changes to the paths. After script starts, instructions will be given for setting paths.
     - The first path is for eMolFrag scripts. The absolute path of the scripts folder is needed.
     - The second path is for pkcombu. The absolute path of pkcombu to be used is needed.  
-2. Run scripts to process data: "/Path_to_Python/python /Path_to_scripts/eMolFrag.py /Path_to_input_directory/ /Path_to_output_directory/ Number-Of-Cores".
-    - /Path_to_Python/python         | Can be simplified as python, ignore the path to it.
-    - /Path_to_scripts/eMolFrag.py   | Main entrance to the scripts, relative path is also OK. 
-    - /Path_to_input_directory/      | Path of the directory which contains input mol2 files, relative path is also OK.
-    - /Path_to_output_directory/     | Path of the directory for output, relative path is also OK.
-    - Number-Of-Cores                | Number of processes created in parallel step. It is better to set this parameter no larger than the number of cores of the system/node/cluster.
+2. Run scripts to process data: `/Path_to_Python/python /Path_to_scripts/eMolFrag.py /Path_to_input_directory/ /Path_to_output_directory/ Number-Of-Cores`.
+    - `/Path_to_Python/python`         | Can be simplified as python, ignore the path to it.
+    - `/Path_to_scripts/eMolFrag.py`   | Main entrance to the scripts, relative path is also OK. 
+    - `/Path_to_input_directory/`      | Path of the directory which contains input mol2 files, relative path is also OK.
+    - `/Path_to_output_directory/`     | Path of the directory for output, relative path is also OK.
+    - `Number-Of-Cores`                | Number of processes created in parallel step. It is better to set this parameter no larger than the number of cores of the system/node/cluster.
 
 
 # Example:
@@ -34,7 +34,7 @@ Last Update: 09/13/2016
     - Step 1: Assume path to eMolFrag.py is /.../eMolFrag_2016_09_09_01/eMolFrag.py, then type: /.../eMolFrag_2016_09_09_01/ at this step.
     - Step 2: Assume path to pkcombu is /.../pkcombu, then type: /.../pkcombu at this step.
 6. `python /.../eMolFrag_2016_09_09_01/eMolFrag.py /.../TestEMolFrag/test-set100/ /.../TestEMolFrag/outputp-testset100-1/ 16 `   # Directory name can be changed to whatever you want. 
-7. # Check output.
+7. Check output.
 
 
 # Output:
