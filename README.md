@@ -26,14 +26,14 @@ Last Update: 09/13/2016
 
 
 # Example:
-1. mkdir TestEMolFrag/   # Any folder name you want
-2. cp /.../test-set100.tar.gz /.../TestEMolFrag/
-3. cd /.../TestEMolFrag/
-4. tar -zxf test-set100.tar.gz   # Sample input data set
-5. python ConfigurePath.py       # Configure path, use absolute path 
+1. `mkdir TestEMolFrag/`   # Any folder name you want
+2. `cp /.../test-set100.tar.gz /.../TestEMolFrag/`
+3. `cd /.../TestEMolFrag/`
+4. `tar -zxf test-set100.tar.gz`   # Sample input data set
+5. `python ConfigurePath.py`       # Configure path, use absolute path 
     - Step 1: Assume path to eMolFrag.py is /.../eMolFrag_2016_09_09_01/eMolFrag.py, then type: /.../eMolFrag_2016_09_09_01/ at this step.
     - Step 2: Assume path to pkcombu is /.../pkcombu, then type: /.../pkcombu at this step.
-6. python /.../eMolFrag_2016_09_09_01/eMolFrag.py /.../TestEMolFrag/test-set100/ /.../TestEMolFrag/outputp-testset100-1/ 16    # Directory name can be changed to whatever you want. 
+6. `python /.../eMolFrag_2016_09_09_01/eMolFrag.py /.../TestEMolFrag/test-set100/ /.../TestEMolFrag/outputp-testset100-1/ 16 `   # Directory name can be changed to whatever you want. 
 7. # Check output.
 
 
