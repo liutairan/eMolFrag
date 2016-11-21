@@ -64,32 +64,32 @@ Output:
 
 #Update Log:
 #This script is written by Tairan Liu.
-# Created       01/17/2016 - Chop
-# Modification  01/17/2016 - Remove bug
-# Modification  01/18/2016 - Reconnect linkers
-# Modification  01/21/2016 - Remove redundancy
-# Modification  02/29/2016 - Remove bug
-# Modification  03/16/2016 - Remove bug
-# Modification  03/17/2016 - Remove bug
-# Modification  03/24/2016 - Remove bug
-# Modification  03/25/2016 - Change each step to functions
-# Modification  04/03/2016 - Remove bug
-# Modification  04/06/2016 - Reduce temp output files
-# Modification  04/06/2016 - Remove bug
-# Modification  04/06/2016 - Start parallel with chop
-# Modification  04/17/2016 - Improve efficiency
-# Modification  04/18/2016 - Remove bug
-# Modification  05/24/2016 - Start parallel with remove redundancy
-# Modification  06/14/2016 - Add parallel option as arg
-# Modification  06/14/2016 - Remove bug
-# Modification  06/29/2016 - Remove bug
-# Modification  07/08/2016 - Change similarity criteria of rigids from 0.95 to 0.97
-# Modification  07/11/2016 - Improve efficiency
-# Modification  07/18/2016 - Pack up, format.
-# Modification  07/19/2016 - Solve python 2.x/3.x compatibility problem.
-# Modification  07/20/2016 - Solve python 2.x/3.x compatibility problem.
-# Modification  07/21/2016 - Solve python 2.x/3.x compatibility problem.
-# Modification  07/22/2016 - Solve python 2.x/3.x compatibility problem.
-# Modification  07/22/2016 - Modify README file
-# Last revision 09/13/2016 - Solve output path conflict problem.
+Created       01/17/2016 - Chop
+Modification  01/17/2016 - Remove bug
+Modification  01/18/2016 - Reconnect linkers
+Modification  01/21/2016 - Remove redundancy
+Modification  02/29/2016 - Remove bug
+Modification  03/16/2016 - Remove bug
+Modification  03/17/2016 - Remove bug
+Modification  03/24/2016 - Remove bug
+Modification  03/25/2016 - Change each step to functions
+Modification  04/03/2016 - Remove bug
+Modification  04/06/2016 - Reduce temp output files
+Modification  04/06/2016 - Remove bug
+Modification  04/06/2016 - Start parallel with chop
+Modification  04/17/2016 - Improve efficiency
+Modification  04/18/2016 - Remove bug
+Modification  05/24/2016 - Start parallel with remove redundancy
+Modification  06/14/2016 - Add parallel option as arg
+Modification  06/14/2016 - Remove bug
+Modification  06/29/2016 - Remove bug
+Modification  07/08/2016 - Change similarity criteria of rigids from 0.95 to 0.97
+Modification  07/11/2016 - Improve efficiency
+Modification  07/18/2016 - Pack up, format.
+Modification  07/19/2016 - Solve python 2.x/3.x compatibility problem.
+Modification  07/20/2016 - Solve python 2.x/3.x compatibility problem.
+Modification  07/21/2016 - Solve python 2.x/3.x compatibility problem.
+Modification  07/22/2016 - Solve python 2.x/3.x compatibility problem.
+Modification  07/22/2016 - Modify README file
+Last revision 09/13/2016 - Solve output path conflict problem.
 ========================
