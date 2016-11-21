@@ -6,7 +6,7 @@ Last Update: 09/13/2016
 
 ========================
 
-Prerequisites:
+# Prerequisites:
 1. Python 2.7.11 or Python 3.5.2
 2. RDKit 2015.09.2 or newer (2016.03.3 has been tested). It is recommended to use Anaconda to install it and use the following command: "conda install -c rdkit rdkit=2015.09.2". Creating conda environment following the instructions on RDKit website may not work properly.
 3. pkcombu
@@ -15,7 +15,7 @@ Prerequisites:
 
 ========================
 
-Usage:
+# Usage:
 1. Use ConfigurePath.py to configure paths. Paths only need to be set before the first run if no changes to the paths. After script starts, instructions will be given for setting paths.
     - The first path is for eMolFrag scripts. The absolute path of the scripts folder is needed.
     - The second path is for pkcombu. The absolute path of pkcombu to be used is needed.  
@@ -26,7 +26,7 @@ Usage:
     - /Path_to_output_directory/     | Path of the directory for output, relative path is also OK.
     - Number-Of-Cores                | Number of processes created in parallel step. It is better to set this parameter no larger than the number of cores of the system/node/cluster.
 
-Example:
+# Example:
 1. mkdir TestEMolFrag/   # Any folder name you want
 2. cp /.../test-set100.tar.gz /.../TestEMolFrag/
 3. cd /.../TestEMolFrag/
@@ -39,7 +39,7 @@ Example:
 
 ========================
 
-Output:
+# Output:
 1. Find correct output folder, assume /.../Output-xxxx/
 2. Then there should be 6 sub folders in this output directory:
 	- output-log/        | Log files, some useful temporary files. 
@@ -62,8 +62,8 @@ Output:
 
 ======================== 
 
-#Update Log:
-#This script is written by Tairan Liu.
+# Update Log:
+This script is written by Tairan Liu.
 Created       01/17/2016 - Chop
 Modification  01/17/2016 - Remove bug
 Modification  01/18/2016 - Reconnect linkers
