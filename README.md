@@ -42,54 +42,98 @@ Last Update: 09/13/2016
 # Output:
 1. Find correct output folder, assume /.../Output-xxxx/
 2. Then there should be 6 sub folders in this output directory:
-	- output-log/        | Log files, some useful temporary files. 
-		-- InputList               | File contains all the input *.mol2 file names.
-		-- ListAll                 | File contains all the fragments before reconnect small linkers and total/carbon/nitrogen/oxygen atoms in each fragment.
-		-- RigidListAll.txt        | File contains all the rigid fragments and total/carbon/nitrogen/oxygen atoms in each fragment.
-		-- RigidGroupList.txt      | Rigid fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property. 
-		-- LinkerListAll.txt       | File contains all the linker fragments after reconnect and total/carbon/nitrogen/oxygen atoms in each fragment.
-		-- LinkerGroupList.txt     | Linker fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property.
-		-- rigids-red-out.txt      | Rigid fragments and their similar fragments.
-		-- rigid-log.txt           | Log file for remove redundancy of rigid fragments.
-		-- linkers-red-out.txt     | Linker fragments and their similar fragments.
-		-- linker-log.txt          | Log file for remove redundancy of linker fragments.
-		-- Process.log             | Log file for the whole process.
-	- output-chop/       | Fragments, rigids and small linkers.
-	- output-chop-comb/  | Fragments, rigids and large linkers.
-	- output-sdf/        | Temp files, *.sdf for each input molecule, can be deleted if not use.
-	- output-rigid/      | Rigid fragments after remove redundancy, with similar fragments in the end of each file.
-	- output-linker/     | Linker fragments after remove redundancy.
+   - output-log/        | Log files, some useful temporary files. 
+   
+      -- InputList               | File contains all the input *.mol2 file names.
+      
+      -- ListAll                 | File contains all the fragments before reconnect small linkers and total/carbon/nitrogen/oxygen atoms in each fragment.
+      
+      -- RigidListAll.txt        | File contains all the rigid fragments and total/carbon/nitrogen/oxygen atoms in each fragment.
+      
+      -- RigidGroupList.txt      | Rigid fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property. 
+      
+      -- LinkerListAll.txt       | File contains all the linker fragments after reconnect and total/carbon/nitrogen/oxygen atoms in each fragment.
+      
+      -- LinkerGroupList.txt     | Linker fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property.
+      
+      -- rigids-red-out.txt      | Rigid fragments and their similar fragments.
+      
+      -- rigid-log.txt           | Log file for remove redundancy of rigid fragments.
+      
+      -- linkers-red-out.txt     | Linker fragments and their similar fragments.
+		
+      -- linker-log.txt          | Log file for remove redundancy of linker fragments.
+		
+      -- Process.log             | Log file for the whole process.
+      
+   - output-chop/       | Fragments, rigids and small linkers.
+   
+   - output-chop-comb/  | Fragments, rigids and large linkers.
+   
+   - output-sdf/        | Temp files, *.sdf for each input molecule, can be deleted if not use.
+   
+   - output-rigid/      | Rigid fragments after remove redundancy, with similar fragments in the end of each file.
+   
+   - output-linker/     | Linker fragments after remove redundancy.
 
 ======================== 
 
 # Update Log:
 This script is written by Tairan Liu.
-Created       01/17/2016 - Chop
-Modification  01/17/2016 - Remove bug
-Modification  01/18/2016 - Reconnect linkers
-Modification  01/21/2016 - Remove redundancy
-Modification  02/29/2016 - Remove bug
-Modification  03/16/2016 - Remove bug
-Modification  03/17/2016 - Remove bug
-Modification  03/24/2016 - Remove bug
-Modification  03/25/2016 - Change each step to functions
-Modification  04/03/2016 - Remove bug
-Modification  04/06/2016 - Reduce temp output files
-Modification  04/06/2016 - Remove bug
-Modification  04/06/2016 - Start parallel with chop
-Modification  04/17/2016 - Improve efficiency
-Modification  04/18/2016 - Remove bug
-Modification  05/24/2016 - Start parallel with remove redundancy
-Modification  06/14/2016 - Add parallel option as arg
-Modification  06/14/2016 - Remove bug
-Modification  06/29/2016 - Remove bug
-Modification  07/08/2016 - Change similarity criteria of rigids from 0.95 to 0.97
-Modification  07/11/2016 - Improve efficiency
-Modification  07/18/2016 - Pack up, format.
-Modification  07/19/2016 - Solve python 2.x/3.x compatibility problem.
-Modification  07/20/2016 - Solve python 2.x/3.x compatibility problem.
-Modification  07/21/2016 - Solve python 2.x/3.x compatibility problem.
-Modification  07/22/2016 - Solve python 2.x/3.x compatibility problem.
-Modification  07/22/2016 - Modify README file
-Last revision 09/13/2016 - Solve output path conflict problem.
-========================
+
+   Created       01/17/2016 - Chop
+
+   Modification  01/17/2016 - Remove bug
+   
+   Modification  01/18/2016 - Reconnect linkers
+   
+   Modification  01/21/2016 - Remove redundancy
+   
+   Modification  02/29/2016 - Remove bug
+   
+   Modification  03/16/2016 - Remove bug
+   
+   Modification  03/17/2016 - Remove bug
+   
+   Modification  03/24/2016 - Remove bug
+   
+   Modification  03/25/2016 - Change each step to functions
+   
+   Modification  04/03/2016 - Remove bug
+   
+   Modification  04/06/2016 - Reduce temp output files
+   
+   Modification  04/06/2016 - Remove bug
+   
+   Modification  04/06/2016 - Start parallel with chop
+   
+   Modification  04/17/2016 - Improve efficiency
+   
+   Modification  04/18/2016 - Remove bug
+   
+   Modification  05/24/2016 - Start parallel with remove redundancy
+   
+   Modification  06/14/2016 - Add parallel option as arg
+   
+   Modification  06/14/2016 - Remove bug
+   
+   Modification  06/29/2016 - Remove bug
+   
+   Modification  07/08/2016 - Change similarity criteria of rigids from 0.95 to 0.97
+   
+   Modification  07/11/2016 - Improve efficiency
+   
+   Modification  07/18/2016 - Pack up, format.
+   
+   Modification  07/19/2016 - Solve python 2.x/3.x compatibility problem.
+   
+   Modification  07/20/2016 - Solve python 2.x/3.x compatibility problem.
+   
+   Modification  07/21/2016 - Solve python 2.x/3.x compatibility problem.
+   
+   Modification  07/22/2016 - Solve python 2.x/3.x compatibility problem.
+   
+   Modification  07/22/2016 - Modify README file
+
+   Last revision 09/13/2016 - Solve output path conflict problem.
+
