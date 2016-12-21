@@ -161,14 +161,14 @@ def ParseArgs():
             
             # output path
             tempPath2 = os.path.abspath(argList[3])
-            if os.path.isdir(tempPath2):
-                outputDir = tempPath2
-                if outputDir[-1]=='/':
-                    pass
-                else:
-                    outputDir=outputDir+'/'
+            #if os.path.isdir(tempPath2):
+            outputDir = tempPath2
+            if outputDir[-1]=='/':
+                pass
             else:
-                paraFlag = 0
+                outputDir=outputDir+'/'
+            #else:
+            #    paraFlag = 0
         else:
             paraFlag = 0
 
@@ -240,14 +240,14 @@ def ParseArgs():
             
             # output path
             tempPath2 = os.path.abspath(argList[3])
-            if os.path.isdir(tempPath2):
-                outputDir = tempPath2
-                if outputDir[-1]=='/':
-                    pass
-                else:
-                    outputDir=outputDir+'/'
+            #if os.path.isdir(tempPath2):
+            outputDir = tempPath2
+            if outputDir[-1]=='/':
+                pass
             else:
-                paraFlag = 0
+                outputDir=outputDir+'/'
+            #else:
+            #    paraFlag = 0
         else:
             paraFlag = 0
 
@@ -297,14 +297,14 @@ def ParseArgs():
             
             # output path
             tempPath2 = os.path.abspath(argList[3])
-            if os.path.isdir(tempPath2):
-                outputDir = tempPath2
-                if outputDir[-1]=='/':
-                    pass
-                else:
-                    outputDir=outputDir+'/'
+            #if os.path.isdir(tempPath2):
+            outputDir = tempPath2
+            if outputDir[-1]=='/':
+                pass
             else:
-                paraFlag = 0
+                outputDir=outputDir+'/'
+            #else:
+            #    paraFlag = 0
         else:
             paraFlag = 0
 
