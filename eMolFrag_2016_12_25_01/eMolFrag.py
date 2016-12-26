@@ -81,12 +81,88 @@ def ParseArgs():
     processNum = 1
     outputSelection = 0
     outputFormat = 0
+    tcBorder = 0.97
     
     if len(args) > 1:
         argList = args[1:]
     else:
         print('Error Code: 1010. Incorrect arguments.')
         return
+
+    if len(argList) > 12:
+        print('Error Code: 1011. Too much arguments.')
+        return
+    elif len(argList) < 4:
+        print('Error Code: 1012. Incorrect arguments.')
+        return
+    elif len(argList)%2 == 1:
+        print('Error Code: 1013. Incorrect arguments.')
+        return
+    elif len(argList)%2 == 0:
+        paraFlag = 1
+        if (argList[0] == '-i'):
+            # input path
+            tempPath1 = os.path.abspath(argList[1])
+            if os.path.isdir(tempPath1):
+                inputFolderPath = tempPath1
+                if inputFolderPath[-1]=='/':
+                    pass
+                else:
+                    inputFolderPath=inputFolderPath+'/'
+            else:
+                paraFlag = 0
+        else:
+            paraFlag = 0
+
+        if (argList[2] == '-o'):
+            # output path
+            tempPath2 = os.path.abspath(argList[3])
+            outputDir = tempPath2
+            if outputDir[-1]=='/':
+                pass
+            else:
+                outputDir=outputDir+'/'
+        else:
+            paraFlag = 0
+
+        if len(argList) == 12:
+            if (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-c') and (argList[10] == '-t'):
+                pass
+            else:
+                paraFlag = 0
+                print('Error Code: . Invalid arguments.')
+                return
+        elif len(argList) == 10:
+            if (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-c'):
+                pass
+            elif (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-t'):
+                pass
+            elif (argList[4] == '-p') and (argList[6] == '-c') and (argList[8] == '-t'):
+                pass
+            elif (argList[4] == '-m') and (argList[6] == '-c') and (argList[8] == '-t'):
+                pass
+            else:
+                paraFlag = 0
+                print('Error Code: . Invalid arguments.')
+                return
+        elif len(argList) == 8:
+            pass
+        elif len(argList) == 6:
+            pass
+        elif len(argList) == 4:
+            pass
+        else:
+            pass
+            
+        if paraFlag == 1:
+            pass
+        else:
+            print('Error Code: 1015. Incorrect arguments.')
+            return
+    else:
+        print('Error Code: 1014. Unknown error.')
+        return
+
 
     if len(argList) == 10:  # -i -o -p -m -c
         paraFlag = 1
