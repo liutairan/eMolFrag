@@ -127,28 +127,270 @@ def ParseArgs():
 
         if len(argList) == 12:
             if (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-c') and (argList[10] == '-t'):
-                pass
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+                
+                # output select
+                tempOutputSelection = int(argList[7])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+                
+                # output format
+                tempOutputFormat = int(argList[9])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+                    
+                # TC Border
+                tempTCBorder = float(argList[11])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
             else:
                 paraFlag = 0
                 print('Error Code: . Invalid arguments.')
                 return
         elif len(argList) == 10:
             if (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-c'):
-                pass
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+                
+                # output select
+                tempOutputSelection = int(argList[7])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+                
+                # output format
+                tempOutputFormat = int(argList[9])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+        
             elif (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-t'):
-                pass
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+                
+                # output select
+                tempOutputSelection = int(argList[7])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+                    
+                # TC Border
+                tempTCBorder = float(argList[9])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
+                    
             elif (argList[4] == '-p') and (argList[6] == '-c') and (argList[8] == '-t'):
-                pass
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+                
+                # output format
+                tempOutputFormat = int(argList[7])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+                    
+                # TC Border
+                tempTCBorder = float(argList[9])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
+                    
             elif (argList[4] == '-m') and (argList[6] == '-c') and (argList[8] == '-t'):
-                pass
+                # output select
+                tempOutputSelection = int(argList[5])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+                
+                # output format
+                tempOutputFormat = int(argList[7])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+                    
+                # TC Border
+                tempTCBorder = float(argList[9])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
             else:
                 paraFlag = 0
                 print('Error Code: . Invalid arguments.')
                 return
         elif len(argList) == 8:
-            pass
+            if (argList[4] == '-p') and (argList[6] == '-m'):
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+                
+                # output select
+                tempOutputSelection = int(argList[7])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+        
+            elif (argList[4] == '-p') and (argList[6] == '-c'):
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+                
+                # output format
+                tempOutputFormat = int(argList[7])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+                    
+            elif (argList[4] == '-p') and (argList[6] == '-t'):
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+                    
+                # TC Border
+                tempTCBorder = float(argList[7])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
+
+            elif (argList[4] == '-m') and (argList[6] == '-c'):
+                # output select
+                tempOutputSelection = int(argList[5])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+                
+                # output format
+                tempOutputFormat = int(argList[7])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+
+            elif (argList[4] == '-m') and (argList[6] == '-t'):
+                # output select
+                tempOutputSelection = int(argList[5])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+                
+                # TC Border
+                tempTCBorder = float(argList[7])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
+                    
+            elif (argList[4] == '-c') and (argList[6] == '-t'):
+                # output format
+                tempOutputFormat = int(argList[5])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+                    
+                # TC Border
+                tempTCBorder = float(argList[7])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
+            else:
+                paraFlag = 0
+                print('Error Code: . Invalid arguments.')
+                return
+
         elif len(argList) == 6:
-            pass
+            if (argList[4] == '-p'):
+                # parallel
+                tempCoreNum = int(argList[5])
+                if (tempCoreNum >= 1) and (tempCoreNum <= 16):
+                    processNum = tempCoreNum
+                else:
+                    paraFlag = 0
+        
+            elif (argList[4] == '-m'):
+                # output select
+                tempOutputSelection = int(argList[5])
+                if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
+                    outputSelection = tempOutputSelection
+                else:
+                    paraFlag = 0
+                
+            elif (argList[4] == '-c'):
+                # output format
+                tempOutputFormat = int(argList[5])
+                if (tempOutputFormat >= 0) and (tempOutputFormat <= 2):
+                    outputFormat = tempOutputFormat
+                else:
+                    paraFlag = 0
+
+            elif (argList[4] == '-t'):
+                # TC Border
+                tempTCBorder = float(argList[5])
+                if (tempTCBorder >= 0.90) and (tempTCBorder <= 1.0):
+                    tcBorder = tempTCBorder
+                else:
+                    paraFlag = 0
+                    print('Error Code: . Invalid TC.')
+
+            else:
+                paraFlag = 0
+                print('Error Code: . Invalid arguments.')
+                return
+
         elif len(argList) == 4:
             pass
         else:
@@ -163,237 +405,8 @@ def ParseArgs():
         print('Error Code: 1014. Unknown error.')
         return
 
-
-    if len(argList) == 10:  # -i -o -p -m -c
-        paraFlag = 1
-        #print('Show')
-        if (argList[0] == '-i') and (argList[2] == '-o') and (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-c'):
-            # input path
-            tempPath1 = os.path.abspath(argList[1])
-            #print(tempPath1)
-            if os.path.isdir(tempPath1):
-                inputFolderPath = tempPath1
-                if inputFolderPath[-1]=='/':
-                    pass
-                else:
-                    inputFolderPath=inputFolderPath+'/'
-            else:
-                paraFlag = 0
-            #print(paraFlag)
-            # output path
-            tempPath2 = os.path.abspath(argList[3])
-            #print(tempPath2)
-            #if os.path.isdir(tempPath2):
-            outputDir = tempPath2
-            if outputDir[-1]=='/':
-                pass
-            else:
-                outputDir=outputDir+'/'
-            #else:
-            #    paraFlag = 0
-            #print(outputDir)
-            # parallel
-            tempCoreNum = int(argList[5])
-            if (tempCoreNum >= 1) and (tempCoreNum <= 16):
-                processNum = tempCoreNum
-            else:
-                paraFlag = 0
-            #print(paraFlag)
-            # output select
-            tempOutputSelection = int(argList[7])
-            if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
-                outputSelection = tempOutputSelection
-            else:
-                paraFlag = 0
-                
-            # output format
-            tempOutputFormat = int(argList[9])
-            if (tempOutputFormat >= 0) and (tempOutputFormat <= 1):
-                outputFormat = tempOutputFormat
-            else:
-                paraFlag = 0
-        else:
-            paraFlag = 0
-    
-        if paraFlag == 1:
-            pass
-        else:
-            print('Error Code: 1012. Incorrect arguments.')
-            return
-            
-    elif len(argList) == 8: # -i -o, two of three (-p -m -c)
-        paraFlag = 1
-        if (argList[0] == '-i') and (argList[2] == '-o'):
-            # input path
-            tempPath1 = os.path.abspath(argList[1])
-            if os.path.isdir(tempPath1):
-                inputFolderPath = tempPath1
-                if inputFolderPath[-1]=='/':
-                    pass
-                else:
-                    inputFolderPath=inputFolderPath+'/'
-            else:
-                paraFlag = 0
-            
-            # output path
-            tempPath2 = os.path.abspath(argList[3])
-            #if os.path.isdir(tempPath2):
-            outputDir = tempPath2
-            if outputDir[-1]=='/':
-                pass
-            else:
-                outputDir=outputDir+'/'
-            #else:
-            #    paraFlag = 0
-        else:
-            paraFlag = 0
-
-        if (argList[4] == '-p') and (argList[6] == '-m'):
-            # parallel
-            tempCoreNum = int(argList[5])
-            if (tempCoreNum >= 1) and (tempCoreNum <= 16):
-                processNum = tempCoreNum
-            else:
-                paraFlag = 0
-
-            # output select
-            tempOutputSelection = int(argList[7])
-            if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
-                outputSelection = tempOutputSelection
-            else:
-                paraFlag = 0
-                
-        elif (argList[4] == '-p') and (argList[6] == '-c'):
-            # parallel
-            tempCoreNum = int(argList[5])
-            if (tempCoreNum >= 1) and (tempCoreNum <= 16):
-                processNum = tempCoreNum
-            else:
-                paraFlag = 0
-
-            # output format
-            tempOutputFormat = int(argList[9])
-            if (tempOutputFormat >= 0) and (tempOutputFormat <= 1):
-                outputFormat = tempOutputFormat
-            else:
-                paraFlag = 0
-        elif (argList[4] == '-m') and (argList[6] == '-c'):
-            # output select
-            tempOutputSelection = int(argList[7])
-            if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
-                outputSelection = tempOutputSelection
-            else:
-                paraFlag = 0
-            
-            # output format
-            tempOutputFormat = int(argList[9])
-            if (tempOutputFormat >= 0) and (tempOutputFormat <= 1):
-                outputFormat = tempOutputFormat
-            else:
-                paraFlag = 0
-        else:
-            paraFlag = 0
-
-        if paraFlag == 1:
-            pass
-        else:
-            print('Error Code: 1013. Incorrect arguments.')
-            return
-
-    elif len(argList) == 6: # -i -o, one of three (-p -m -c)
-        paraFlag = 1
-        if (argList[0] == '-i') and (argList[2] == '-o'):
-            # input path
-            tempPath1 = os.path.abspath(argList[1])
-            if os.path.isdir(tempPath1):
-                inputFolderPath = tempPath1
-                if inputFolderPath[-1]=='/':
-                    pass
-                else:
-                    inputFolderPath=inputFolderPath+'/'
-            else:
-                paraFlag = 0
-            
-            # output path
-            tempPath2 = os.path.abspath(argList[3])
-            #if os.path.isdir(tempPath2):
-            outputDir = tempPath2
-            if outputDir[-1]=='/':
-                pass
-            else:
-                outputDir=outputDir+'/'
-            #else:
-            #    paraFlag = 0
-        else:
-            paraFlag = 0
-
-        if (argList[4] == '-p'):
-            # parallel
-            tempCoreNum = int(argList[5])
-            if (tempCoreNum >= 1) and (tempCoreNum <= 16):
-                processNum = tempCoreNum
-            else:
-                paraFlag = 0
-        elif (argList[4] == '-c'):
-            # output format
-            tempOutputFormat = int(argList[9])
-            if (tempOutputFormat >= 0) and (tempOutputFormat <= 1):
-                outputFormat = tempOutputFormat
-            else:
-                paraFlag = 0
-        elif (argList[4] == '-m'):
-            # output select
-            tempOutputSelection = int(argList[7])
-            if (tempOutputSelection >= 0) and (tempOutputSelection <= 2):
-                outputSelection = tempOutputSelection
-            else:
-                paraFlag = 0
-        else:
-            paraFlag = 0
-
-        if paraFlag == 1:
-            pass
-        else:
-            print('Error Code: 1014. Incorrect arguments.')
-            return
-
-    elif len(argList) == 4: # -i -o
-        paraFlag = 1
-        if (argList[0] == '-i') and (argList[2] == '-o'):
-            # input path
-            tempPath1 = os.path.abspath(argList[1])
-            if os.path.isdir(tempPath1):
-                inputFolderPath = tempPath1
-                if inputFolderPath[-1]=='/':
-                    pass
-                else:
-                    inputFolderPath=inputFolderPath+'/'
-            else:
-                paraFlag = 0
-            
-            # output path
-            tempPath2 = os.path.abspath(argList[3])
-            #if os.path.isdir(tempPath2):
-            outputDir = tempPath2
-            if outputDir[-1]=='/':
-                pass
-            else:
-                outputDir=outputDir+'/'
-            #else:
-            #    paraFlag = 0
-        else:
-            paraFlag = 0
-
-        if paraFlag == 1:
-            pass
-        else:
-            print('Error Code: 1015. Incorrect arguments.')
-            return
-    else:
-        print('Error Code: 1011. Incorrect arguments.')
-        return
-    
-    return [mainEntryPath, inputFolderPath, outputDir, processNum, outputSelection, outputFormat]
+    print(inputFolderPath, outputDir, processNum, outputSelection, outputFormat, tcBorder)
+    return [mainEntryPath, inputFolderPath, outputDir, processNum, outputSelection, outputFormat, tcBorder]
 
 
 
@@ -511,8 +524,6 @@ def PrepareEnv(outputDir, mainEntryPath, processNum):
 
         if not os.path.exists(outputDir):
             os.mkdir(outputDir)
-        #else:
-        #    print('Designate output path already exists, do you want to use another path?')
         if not os.path.exists(outputFolderPath_log):
             os.mkdir(outputFolderPath_log)
         if not os.path.exists(outputFolderPath_chop):
@@ -555,7 +566,7 @@ def PrepareEnv(outputDir, mainEntryPath, processNum):
     return [outputPathList, pool]
 
 
-def ProcessData(inputFolderPath, outputPathList, outputSelection, outputFormat, pool):
+def ProcessData(inputFolderPath, outputPathList, outputSelection, outputFormat, tcBorder, pool):
     try:
         [outputDir, outputFolderPath_log, outputFolderPath_chop, outputFolderPath_active, outputFolderPath_linker, outputFolderPath_sdf, outputFolderPath_chop_comb] = outputPathList
     except:
@@ -593,7 +604,7 @@ def ProcessData(inputFolderPath, outputPathList, outputSelection, outputFormat, 
 
     if (outputSelection == 0) or (outputSelection == 2):
         try:
-            RmRigidRedundancy(outputPathList, pool)
+            RmRigidRedundancy(outputPathList, tcBorder, pool)
         except:
             print('Error Code: 1074.')
             return
@@ -623,6 +634,7 @@ def AdjustOutput(outputPathList, outputSelection, outputFormat):
     except:
         print('Error Code: 1130. Failed to parse output path list.')
         return
+
     #Step 5: Clear temp file and directory.
     if outputSelection == 0: # default output selection, full process and output, left 4 folders: log, rigid, linker, chop-comb
         shutil.rmtree(outputFolderPath_chop)
@@ -640,9 +652,32 @@ def AdjustOutput(outputPathList, outputSelection, outputFormat):
         print('Error Code: 1131. Invalid output selection.')
         return
 
-    if outputFormat == 1: # traditional format, each file only contain one molecule
+    if outputFormat == 0: # default output format, traditional format, each file only contain one molecule
         pass
-    elif outputFormat == 0: # default output format, only one rigid file and only one linker file
+    elif outputFormat == 1: # only one rigid file and only one linker file, one folder for log
+        if outputSelection == 0:  # 4 output files, (rigid, linker)*(before remove, after remove)
+            try:
+                AdjustSub0(outputPathList)
+            except:
+                print('Error Code: 1134.')
+                return
+        elif outputSelection == 1:  # 2 output files, (rigid, linker)*(before remove)
+            try:
+                AdjustSub1(outputPathList)
+            except:
+                print('Error Code: 1135.')
+                return
+        elif outputSelection == 2:  # 2 output files, (rigid, linker)*(after remove)
+            try:
+                AdjustSub2(outputPathList)
+            except:
+                print('Error Code: 1136.')
+                return
+        else:
+            print('Error Code: 1133.')
+            return
+    elif outputFormat == 2: # only rigids and linkers, no log folder
+        shutil.rmtree(outputFolderPath_log)
         if outputSelection == 0:  # 4 output files, (rigid, linker)*(before remove, after remove)
             try:
                 AdjustSub0(outputPathList)
@@ -799,7 +834,6 @@ def AdjustSub1(outputPathList):
 
 
 
-
 def AdjustSub2(outputPathList):
     try:
         [outputDir, outputFolderPath_log, outputFolderPath_chop, outputFolderPath_active, outputFolderPath_linker, outputFolderPath_sdf, outputFolderPath_chop_comb] = outputPathList
@@ -948,7 +982,7 @@ def Chop(outputPathList, pool):
         print('Error Code: 1093.')
         return
 
-def RmRigidRedundancy(outputPathList, pool):
+def RmRigidRedundancy(outputPathList, tcBorder, pool):
     try:
         [outputDir, outputFolderPath_log, outputFolderPath_chop, outputFolderPath_active, outputFolderPath_linker, outputFolderPath_sdf, outputFolderPath_chop_comb] = outputPathList
     except:
@@ -1022,7 +1056,7 @@ def RmRigidRedundancy(outputPathList, pool):
         return
 
     try:
-        partial_RmRigid=partial(RmRigidRed, outputDir)
+        partial_RmRigid=partial(RmRigidRed, outputDir, tcBorder)
         pool.map(partial_RmRigid,fileNameGroup_Rs)
     except:
         print('Error Code: 1107.')
@@ -1155,7 +1189,7 @@ def PrintLog(path, msg):
 def main():
     try:
         try:
-            [mainEntryPath, inputFolderPath, outputDir, processNum, outputSelection, outputFormat] = ParseArgs()
+            [mainEntryPath, inputFolderPath, outputDir, processNum, outputSelection, outputFormat, tcBorder] = ParseArgs()
         except:
             print('Error Code: 1001. Failed to parse input commands.')
             return
@@ -1167,7 +1201,7 @@ def main():
             return
         
         try:
-            ProcessData(inputFolderPath, outputPathList, outputSelection, outputFormat, pool)
+            ProcessData(inputFolderPath, outputPathList, outputSelection, outputFormat, tcBorder, pool)
         except:
             print('Error Code: 1003. Failed to process data.')
             return

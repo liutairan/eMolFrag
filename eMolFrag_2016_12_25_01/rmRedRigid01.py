@@ -9,7 +9,7 @@ from subprocess import Popen,PIPE
 import time
 
 
-def RmRigidRed(outputPath,inputList):
+def RmRigidRed(outputPath, tcBorder, inputList):
     pathList=[]
     with open('PathConfigure.log','r') as inf:
         tempList=inf.readlines()
@@ -59,7 +59,7 @@ def RmRigidRed(outputPath,inputList):
                     except:
                         tnm=str(0.00)
 
-                    if float(tnm) > 0.97:
+                    if float(tnm) > tcBorder:
                     
                         similarList.append(molB+'\n')
                         alignmentList.append(ali)
