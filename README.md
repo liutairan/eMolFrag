@@ -2,14 +2,14 @@
 eMolFrag is a molecular fragmentation tool based on BRICS algorithm written in Python.
 
 This README file is written by Tairan Liu. 
-Last Update: 09/13/2016
+Last Update: 12/26/2016
 
 
 # Prerequisites:
 1. Python 2.7.11 or Python 3.5.2
 2. RDKit 2015.09.2 or newer (2016.03.3 has been tested). It is recommended to use Anaconda to install it and use the following command: "conda install -c rdkit rdkit=2015.09.2". Creating conda environment following the instructions on RDKit website may not work properly.
 3. pkcombu
-4. eMolFrag Scripts 2016_09_09_01
+4. eMolFrag Scripts 2016_12_25_01
 5. (Optional) Openbabel 2.3.1
 
 
@@ -17,13 +17,23 @@ Last Update: 09/13/2016
 1. Use ConfigurePath.py to configure paths. Paths only need to be set before the first run if no changes to the paths. After script starts, instructions will be given for setting paths.
     - The first path is for eMolFrag scripts. The absolute path of the scripts folder is needed.
     - The second path is for pkcombu. The absolute path of pkcombu to be used is needed.  
-2. Run scripts to process data: `/Path_to_Python/python /Path_to_scripts/eMolFrag.py /Path_to_input_directory/ /Path_to_output_directory/ Number-Of-Cores`.
+2. Run scripts to process data: `/Path_to_Python/python /Path_to_scripts/eMolFrag.py -i /Path_to_input_directory/ -o /Path_to_output_directory/ -p Number-Of-Cores -m Output-selection -c Output-format -t TC-Border`.
     - `/Path_to_Python/python`         | Can be simplified as python, ignore the path to it.
     - `/Path_to_scripts/eMolFrag.py`   | Main entrance to the scripts, relative path is also OK. 
     - `/Path_to_input_directory/`      | Path of the directory which contains input mol2 files, relative path is also OK.
     - `/Path_to_output_directory/`     | Path of the directory for output, relative path is also OK.
     - `Number-Of-Cores`                | Number of processes created in parallel step. It is better to set this parameter no larger than the number of cores of the system/node/cluster.
-
+    - `Output-selection`               | Different output select, remove redundancy or not.
+    - `Output-format`                  | Keep or the files or put all the output rigids or linkers in 2 or 4 files.
+    - `TC-Border`                      | TC border used to judge rigids similar or not.
+    
+Parameter |  Optional |  Default argument |  Example of argument |  Description
+  -i            N          No default         /…/test-set100/        Input path
+  -o            N          No default         /…/output-100-1/       Output path
+  -p            Y              1                    16           Parallel cores to be used
+  -m            Y              0                     1           Output selection: 0: full process and output; 1: only chop (and reconnect); 2: chop and remove redundancy, but remove temp chop files, only output the rigids and linkers after remove redundancy
+  -c            Y              0                     1           Output format: 0: all linkers in one file, all rigids in one file, all logs in one file; 1: traditional format
+  -t            Y             0.97                  0.95             Any value 0.90-1.00
 
 # Example:
 1. `mkdir TestEMolFrag/`   # Any folder name you want
