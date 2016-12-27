@@ -154,10 +154,10 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1014-1. Invalid TC.')
             else:
                 paraFlag = 0
-                print('Error Code: . Invalid arguments.')
+                print('Error Code: 1014. Invalid arguments.')
                 return
         elif len(argList) == 10:
             if (argList[4] == '-p') and (argList[6] == '-m') and (argList[8] == '-c'):
@@ -203,7 +203,7 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1015-1. Invalid TC.')
                     
             elif (argList[4] == '-p') and (argList[6] == '-c') and (argList[8] == '-t'):
                 # parallel
@@ -226,7 +226,7 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1015-2. Invalid TC.')
                     
             elif (argList[4] == '-m') and (argList[6] == '-c') and (argList[8] == '-t'):
                 # output select
@@ -249,10 +249,10 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1015-3. Invalid TC.')
             else:
                 paraFlag = 0
-                print('Error Code: . Invalid arguments.')
+                print('Error Code: 1015. Invalid arguments.')
                 return
         elif len(argList) == 8:
             if (argList[4] == '-p') and (argList[6] == '-m'):
@@ -299,7 +299,7 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1016-1. Invalid TC.')
 
             elif (argList[4] == '-m') and (argList[6] == '-c'):
                 # output select
@@ -330,7 +330,7 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1016-2. Invalid TC.')
                     
             elif (argList[4] == '-c') and (argList[6] == '-t'):
                 # output format
@@ -346,10 +346,10 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1016-3. Invalid TC.')
             else:
                 paraFlag = 0
-                print('Error Code: . Invalid arguments.')
+                print('Error Code: 1016. Invalid arguments.')
                 return
 
         elif len(argList) == 6:
@@ -384,11 +384,11 @@ def ParseArgs():
                     tcBorder = tempTCBorder
                 else:
                     paraFlag = 0
-                    print('Error Code: . Invalid TC.')
+                    print('Error Code: 1017-1. Invalid TC.')
 
             else:
                 paraFlag = 0
-                print('Error Code: . Invalid arguments.')
+                print('Error Code: 1017. Invalid arguments.')
                 return
 
         elif len(argList) == 4:
@@ -399,10 +399,10 @@ def ParseArgs():
         if paraFlag == 1:
             pass
         else:
-            print('Error Code: 1015. Incorrect arguments.')
+            print('Error Code: 1018. Incorrect arguments.')
             return
     else:
-        print('Error Code: 1014. Unknown error.')
+        print('Error Code: 1019. Unknown error.')
         return
 
     print(inputFolderPath, outputDir, processNum, outputSelection, outputFormat, tcBorder)
