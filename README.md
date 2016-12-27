@@ -28,11 +28,17 @@ Last Update: 12/26/2016
     - `TC-Border`                      | TC border used to judge rigids similar or not.
     
 Parameter |  Optional |  Default argument |  Example of argument |  Description
+
   -i            N          No default         /…/test-set100/        Input path
+  
   -o            N          No default         /…/output-100-1/       Output path
+  
   -p            Y              1                    16           Parallel cores to be used
+  
   -m            Y              0                     1           Output selection: 0: full process and output; 1: only chop (and reconnect); 2: chop and remove redundancy, but remove temp chop files, only output the rigids and linkers after remove redundancy
+  
   -c            Y              0                     1           Output format: 0: all linkers in one file, all rigids in one file, all logs in one file; 1: traditional format
+  
   -t            Y             0.97                  0.95             Any value 0.90-1.00
 
 # Example:
@@ -43,46 +49,46 @@ Parameter |  Optional |  Default argument |  Example of argument |  Description
 5. `python ConfigurePath.py`       # Configure path, use absolute path 
     - Step 1: Assume path to eMolFrag.py is /.../eMolFrag_2016_09_09_01/eMolFrag.py, then type: /.../eMolFrag_2016_09_09_01/ at this step.
     - Step 2: Assume path to pkcombu is /.../pkcombu, then type: /.../pkcombu at this step.
-6. `python /.../eMolFrag_2016_09_09_01/eMolFrag.py /.../TestEMolFrag/test-set100/ /.../TestEMolFrag/outputp-testset100-1/ 16 `   # Directory name can be changed to whatever you want. 
+6. `python /.../eMolFrag_2016_12_25_01/eMolFrag.py -i /.../TestEMolFrag/test-set100/ -o /.../TestEMolFrag/outputp-testset100-1/ -p 16 -m 0 -c 0 -t 0.95`   # Directory name can be changed to whatever you want. 
 7. Check output.
 
 
 # Output:
 1. Find correct output folder, assume /.../Output-xxxx/
 2. Then there should be 6 sub folders in this output directory:
-   - output-log/        | Log files, some useful temporary files. 
+   - `output-log/`        | Log files, some useful temporary files. 
    
-      -- InputList               | File contains all the input *.mol2 file names.
+      -- `InputList`               | File contains all the input *.mol2 file names.
       
-      -- ListAll                 | File contains all the fragments before reconnect small linkers and total/carbon/nitrogen/oxygen atoms in each fragment.
+      -- `ListAll`                 | File contains all the fragments before reconnect small linkers and total/carbon/nitrogen/oxygen atoms in each fragment.
       
-      -- RigidListAll.txt        | File contains all the rigid fragments and total/carbon/nitrogen/oxygen atoms in each fragment.
+      -- `RigidListAll.txt`        | File contains all the rigid fragments and total/carbon/nitrogen/oxygen atoms in each fragment.
       
-      -- RigidGroupList.txt      | Rigid fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property. 
+      -- `RigidGroupList.txt`      | Rigid fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property. 
       
-      -- LinkerListAll.txt       | File contains all the linker fragments after reconnect and total/carbon/nitrogen/oxygen atoms in each fragment.
+      -- `LinkerListAll.txt`       | File contains all the linker fragments after reconnect and total/carbon/nitrogen/oxygen atoms in each fragment.
       
-      -- LinkerGroupList.txt     | Linker fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property.
+      -- `LinkerGroupList.txt`     | Linker fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property.
       
-      -- rigids-red-out.txt      | Rigid fragments and their similar fragments.
+      -- `rigids-red-out.txt`      | Rigid fragments and their similar fragments.
       
-      -- rigid-log.txt           | Log file for remove redundancy of rigid fragments.
+      -- `rigid-log.txt`           | Log file for remove redundancy of rigid fragments.
       
-      -- linkers-red-out.txt     | Linker fragments and their similar fragments.
+      -- `linkers-red-out.txt`     | Linker fragments and their similar fragments.
 		
-      -- linker-log.txt          | Log file for remove redundancy of linker fragments.
+      -- `linker-log.txt`          | Log file for remove redundancy of linker fragments.
 		
-      -- Process.log             | Log file for the whole process.
+      -- `Process.log`             | Log file for the whole process.
       
-   - output-chop/       | Fragments, rigids and small linkers.
+   - `output-chop/`       | Fragments, rigids and small linkers.
    
-   - output-chop-comb/  | Fragments, rigids and large linkers.
+   - `output-chop-comb/`  | Fragments, rigids and large linkers.
    
-   - output-sdf/        | Temp files, *.sdf for each input molecule, can be deleted if not use.
+   - `output-sdf/`        | Temp files, *.sdf for each input molecule, can be deleted if not use.
    
-   - output-rigid/      | Rigid fragments after remove redundancy, with similar fragments in the end of each file.
+   - `output-rigid/`      | Rigid fragments after remove redundancy, with similar fragments in the end of each file.
    
-   - output-linker/     | Linker fragments after remove redundancy.
+   - `output-linker/`     | Linker fragments after remove redundancy.
  
 
 # Update Log:
@@ -142,5 +148,24 @@ This script is written by Tairan Liu.
    
    Modification  07/22/2016 - Modify README file
 
-   Last revision 09/13/2016 - Solve output path conflict problem.
-
+   Modification  09/13/2016 - Solve output path conflict problem.
+   
+   Modification  12/01/2016 - Change to functions
+   
+   Modification  12/02/2016 - Error code.
+   
+   Modification  12/03/2016 - Error code.
+   
+   Modification  12/04/2016 - Error code.
+   
+   Modification  12/05/2016 - Error code.
+   
+   Modification  12/21/2016 - Python 2.x/3.x compatibility problem.
+   
+   Modification  12/22/2016 - Add new arguments.
+   
+   Modification  12/23/2016 - Add new arguments.
+   
+   Modification  12/25/2016 - Remove bug.
+   
+   Last revision 12/26/2016 - Test.
