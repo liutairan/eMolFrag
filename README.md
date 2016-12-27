@@ -27,19 +27,14 @@ Last Update: 12/26/2016
     - `Output-format`                  | Keep or the files or put all the output rigids or linkers in 2 or 4 files.
     - `TC-Border`                      | TC border used to judge rigids similar or not.
     
-Parameter |  Optional |  Default argument |  Example of argument |  Description
-
-  -i            N          No default         /…/test-set100/        Input path
-  
-  -o            N          No default         /…/output-100-1/       Output path
-  
-  -p            Y              1                    16           Parallel cores to be used
-  
-  -m            Y              0                     1           Output selection: 0: full process and output; 1: only chop (and reconnect); 2: chop and remove redundancy, but remove temp chop files, only output the rigids and linkers after remove redundancy
-  
-  -c            Y              0                     1           Output format: 0: all linkers in one file, all rigids in one file, all logs in one file; 1: traditional format
-  
-  -t            Y             0.97                  0.95             Any value 0.90-1.00
+|Parameter |  Optional |  Default argument |  Example of argument |  Description|
+|:-------------:|:-------------:|:-----:|:-------------:|:-------------:|
+|  -i      |      N    |      No default   |      /…/test-set100/    |    Input path | 
+|  -o      |      N    |      No default   |      /…/output-100-1/   |    Output path |
+|  -p      |      Y    |          1        |            16      |     Parallel cores to be used |
+|  -m      |      Y    |          0        |             1      |     Output selection: 0: full process and output; 1: only chop (and reconnect); 2: chop and remove redundancy, but remove temp chop files, only output the rigids and linkers after remove redundancy | 
+|  -c      |      Y    |          0        |             1      |     Output format: 0: all linkers in one file, all rigids in one file, all logs in one file; 1: traditional format | 
+|  -t      |      Y    |         0.97      |            0.95    |         Any value 0.90-1.00 |
 
 # Example:
 1. `mkdir TestEMolFrag/`   # Any folder name you want
