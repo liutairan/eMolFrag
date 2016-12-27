@@ -59,7 +59,7 @@ def RmRigidRed(outputPath, tcBorder, inputList):
                     except:
                         tnm=str(0.00)
 
-                    if float(tnm) > tcBorder:
+                    if float(tnm) >= tcBorder:
                     
                         similarList.append(molB+'\n')
                         alignmentList.append(ali)
