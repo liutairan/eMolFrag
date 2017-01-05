@@ -2,14 +2,14 @@
 eMolFrag is a molecular fragmentation tool based on BRICS algorithm written in Python.
 
 This README file is written by Tairan Liu. 
-Last Update: 12/26/2016
+Last Update: 12/30/2016
 
 
 # Prerequisites:
 1. Python 2.7.11 or Python 3.5.2
 2. RDKit 2015.09.2 or newer (2016.03.3 has been tested). It is recommended to use Anaconda to install it and use the following command: "conda install -c rdkit rdkit=2015.09.2". Creating conda environment following the instructions on RDKit website may not work properly.
 3. pkcombu
-4. eMolFrag Scripts 2016_12_25_01
+4. eMolFrag Scripts 2016_12_30_01
 5. (Optional) Openbabel 2.3.1
 
 
@@ -40,9 +40,9 @@ Last Update: 12/26/2016
 3. `cd /.../TestEMolFrag/`
 4. `tar -zxf test-set100.tar.gz`   # Sample input data set
 5. `python ConfigurePath.py`       # Configure path, use absolute path 
-    - Step 1: Assume path to eMolFrag.py is /.../eMolFrag_2016_09_09_01/eMolFrag.py, then type: /.../eMolFrag_2016_09_09_01/ at this step.
+    - Step 1: Assume path to eMolFrag.py is /.../eMolFrag_2016_12_30_01/eMolFrag.py, then type: /.../eMolFrag_2016_12_30_01/ at this step.
     - Step 2: Assume path to pkcombu is /.../pkcombu, then type: /.../pkcombu at this step.
-6. `python /.../eMolFrag_2016_12_25_01/eMolFrag.py -i /.../TestEMolFrag/test-set100/ -o /.../TestEMolFrag/outputp-testset100-1/ -p 16 -m 0 -c 0`   # Directory name can be changed to whatever you want. 
+6. `python /.../eMolFrag_2016_12_30_01/eMolFrag.py -i /.../TestEMolFrag/test-set100/ -o /.../TestEMolFrag/outputp-testset100-1/ -p 16 -m 0 -c 0`   # Directory name can be changed to whatever you want. 
 7. Check output.
 
 
