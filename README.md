@@ -17,15 +17,14 @@ Last Update: 12/26/2016
 1. Use ConfigurePath.py to configure paths. Paths only need to be set before the first run if no changes to the paths. After script starts, instructions will be given for setting paths.
     - The first path is for eMolFrag scripts. The absolute path of the scripts folder is needed.
     - The second path is for pkcombu. The absolute path of pkcombu to be used is needed.  
-2. Run scripts to process data: `/Path_to_Python/python /Path_to_scripts/eMolFrag.py -i /Path_to_input_directory/ -o /Path_to_output_directory/ -p Number-Of-Cores -m Output-selection -c Output-format -t TC-Border`.
+2. Run scripts to process data: `/Path_to_Python/python /Path_to_scripts/eMolFrag.py -i /Path_to_input_directory/ -o /Path_to_output_directory/ -p Number-Of-Cores -m Output-selection -c Output-format`.
     - `/Path_to_Python/python`         | Can be simplified as python, ignore the path to it.
     - `/Path_to_scripts/eMolFrag.py`   | Main entrance to the scripts, relative path is also OK. 
     - `/Path_to_input_directory/`      | Path of the directory which contains input mol2 files, relative path is also OK.
     - `/Path_to_output_directory/`     | Path of the directory for output, relative path is also OK.
     - `Number-Of-Cores`                | Number of processes created in parallel step. It is better to set this parameter no larger than the number of cores of the system/node/cluster.
     - `Output-selection`               | Different output select, remove redundancy or not.
-    - `Output-format`                  | Keep or the files or put all the output rigids or linkers in 2 or 4 files.
-    - `TC-Border`                      | TC border used to judge rigids similar or not.
+    - `Output-format`                  | Keep or the files or put all the output bricks or linkers in 2 or 4 files.
     
 |Parameter |  Optional |  Default argument |  Example of argument |  Description|
 |:-------------:|:-------------:|:-----:|:-------------:|:-------------:|
@@ -33,8 +32,7 @@ Last Update: 12/26/2016
 |  -o      |      N    |      No default   |      /…/output-100-1/   |    Output path |
 |  -p      |      Y    |          1        |            16      |     Parallel cores to be used |
 |  -m      |      Y    |          0        |             1      |     Output selection: 0: full process and output; 1: only chop (and reconnect); 2: chop and remove redundancy, but remove temp chop files, only output the rigids and linkers after remove redundancy | 
-|  -c      |      Y    |          0        |             1      |     Output format: 0: all linkers in one file, all rigids in one file, all logs in one file; 1: traditional format | 
-|  -t      |      Y    |         0.97      |            0.95    |         Any value 0.90-1.00 |
+|  -c      |      Y    |          0        |             1      |     Output format: 1: all linkers in one file, all bricks in one file, all logs in one folder; 2: remove log files; 0: traditional format | 
 
 # Example:
 1. `mkdir TestEMolFrag/`   # Any folder name you want
@@ -44,30 +42,30 @@ Last Update: 12/26/2016
 5. `python ConfigurePath.py`       # Configure path, use absolute path 
     - Step 1: Assume path to eMolFrag.py is /.../eMolFrag_2016_09_09_01/eMolFrag.py, then type: /.../eMolFrag_2016_09_09_01/ at this step.
     - Step 2: Assume path to pkcombu is /.../pkcombu, then type: /.../pkcombu at this step.
-6. `python /.../eMolFrag_2016_12_25_01/eMolFrag.py -i /.../TestEMolFrag/test-set100/ -o /.../TestEMolFrag/outputp-testset100-1/ -p 16 -m 0 -c 0 -t 0.95`   # Directory name can be changed to whatever you want. 
+6. `python /.../eMolFrag_2016_12_25_01/eMolFrag.py -i /.../TestEMolFrag/test-set100/ -o /.../TestEMolFrag/outputp-testset100-1/ -p 16 -m 0 -c 0`   # Directory name can be changed to whatever you want. 
 7. Check output.
 
 
 # Output:
 1. Find correct output folder, assume /.../Output-xxxx/
-2. Then there should be 6 sub folders in this output directory:
+2. Then there should be 4 sub folders in this output directory if use "-m" 0 and "-c" 0:
    - `output-log/`        | Log files, some useful temporary files. 
    
       -- `InputList`               | File contains all the input *.mol2 file names.
       
       -- `ListAll`                 | File contains all the fragments before reconnect small linkers and total/carbon/nitrogen/oxygen atoms in each fragment.
       
-      -- `RigidListAll.txt`        | File contains all the rigid fragments and total/carbon/nitrogen/oxygen atoms in each fragment.
+      -- `BrickListAll.txt`        | File contains all the brick fragments and total/carbon/nitrogen/oxygen atoms in each fragment.
       
-      -- `RigidGroupList.txt`      | Rigid fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property. 
+      -- `BrickGroupList.txt`      | Brick fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property. 
       
       -- `LinkerListAll.txt`       | File contains all the linker fragments after reconnect and total/carbon/nitrogen/oxygen atoms in each fragment.
       
       -- `LinkerGroupList.txt`     | Linker fragments are grouped by total/carbon/nitrogen/oxygen atoms in each fragment as property, and a number of how many fragments have the same property.
       
-      -- `rigids-red-out.txt`      | Rigid fragments and their similar fragments.
+      -- `bricks-red-out.txt`      | Brick fragments and their similar fragments.
       
-      -- `rigid-log.txt`           | Log file for remove redundancy of rigid fragments.
+      -- `brick-log.txt`           | Log file for remove redundancy of brick fragments.
       
       -- `linkers-red-out.txt`     | Linker fragments and their similar fragments.
 		
@@ -75,13 +73,10 @@ Last Update: 12/26/2016
 		
       -- `Process.log`             | Log file for the whole process.
       
-   - `output-chop/`       | Fragments, rigids and small linkers.
    
-   - `output-chop-comb/`  | Fragments, rigids and large linkers.
+   - `output-chop-comb/`  | Fragments, bricks and large linkers.
    
-   - `output-sdf/`        | Temp files, *.sdf for each input molecule, can be deleted if not use.
-   
-   - `output-rigid/`      | Rigid fragments after remove redundancy, with similar fragments in the end of each file.
+   - `output-brick/`      | Brick fragments after remove redundancy.
    
    - `output-linker/`     | Linker fragments after remove redundancy.
  
@@ -163,4 +158,8 @@ This script is written by Tairan Liu.
    
    Modification  12/25/2016 - Remove bug.
    
-   Last revision 12/26/2016 - Test.
+   Modification  12/26/2016 - Test.
+
+   Modification  12/27/2016 - Minor changes.
+
+   Last revision 12/30/2016 - Test.
