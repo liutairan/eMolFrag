@@ -162,4 +162,12 @@ This script is written by Tairan Liu.
 
    Modification  12/27/2016 - Minor changes.
 
-   Last revision 12/30/2016 - Test.
+   Modification  12/30/2016 - Test.
+
+   Modification  01/12/2017 - Change linker redundancy definition.
+   
+   Modification  01/13/2017 - Change linker redundancy definition.
+   
+   Modification  01/18/2017 - Solve double bond problem.
+
+   Last revision 01/18/2017 - Test.
