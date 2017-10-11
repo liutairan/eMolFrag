@@ -2,8 +2,11 @@
 eMolFrag is a molecular fragmentation tool based on BRICS algorithm written in Python.
 
 This README file is written by Tairan Liu. 
-Last Update: 01/18/2017
+Last Update: 06/19/2017
 
+If you find this tool is useful to you, please cite this paper:
+
+Liu, Tairan, Misagh Naderi, Chris Alvin, Supratik Mukhopadhyay, and Michal Brylinski. "Break Down in Order To Build Up: Decomposing Small Molecules for Fragment-Based Drug Design with e MolFrag." Journal of Chemical Information and Modeling 57, no. 4 (2017): 627-631.
 
 # Prerequisites:
 1. Python 2.7.11 or Python 3.5.2
