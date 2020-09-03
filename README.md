@@ -1,3 +1,6 @@
+# Apology     
+Dear Colleagues, I want to express my apology for not responding your queries. I was busy with postdoc application and moving to another state recently. I will be back to solve these issues as soon as I can. Sorry about this.
+
 # eMolFrag
 eMolFrag is a molecular fragmentation tool based on BRICS algorithm written in Python.
 
